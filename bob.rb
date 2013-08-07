@@ -1,6 +1,6 @@
 class Bob
-  def hey(noise)
-    noise = Noise.new(noise)
+  def hey(incoming_noise)
+    noise = Noise.new(incoming_noise)
     if noise.silence?
       "Fine. Be that way!"
     elsif noise.shouting?
@@ -28,6 +28,6 @@ class Noise
   end
 
   def silence?
-    (noise =~ /^\s*$/ || noise.nil?)
+    noise.nil? || noise =~ /^\s*$/
   end
 end
