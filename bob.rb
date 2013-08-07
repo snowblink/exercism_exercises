@@ -1,18 +1,6 @@
 class Bob
   def hey(noise)
-
-    def noise.shouting?
-      self.upcase == self
-    end
-
-    def noise.question?
-      self =~ /\?$/
-    end
-
-    def noise.silence?
-      (self =~ /^\s*$/ || self.nil?)
-    end
-
+    noise = Noise.new(noise)
     if noise.silence?
       "Fine. Be that way!"
     elsif noise.shouting?
@@ -22,5 +10,24 @@ class Bob
     else
       "Whatever."
     end
+  end
+end
+
+class Noise
+  attr_reader :noise
+  def initialize(noise)
+    @noise = noise
+  end
+
+  def shouting?
+    noise.upcase == noise
+  end
+
+  def question?
+    noise =~ /\?$/
+  end
+
+  def silence?
+    (noise =~ /^\s*$/ || noise.nil?)
   end
 end
