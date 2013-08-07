@@ -24,7 +24,7 @@ class Noise
   end
 
   def question?
-    noise =~ /\?$/
+    noise.end_with?("?")
   end
 
   def silence?
