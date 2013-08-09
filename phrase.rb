@@ -6,14 +6,14 @@ class Phrase
   def word_count
     results = Hash.new(0)
     tokenized_words.each do |word|
-      results[word] += 1
+      results[word.downcase] += 1
     end
     return results
   end
 
   def tokenized_words
     @words.gsub(/,/, ' ').
-      gsub(/[^a-z0-9 ]/, '').
+      gsub(/[^A-Za-z0-9 ]/, '').
       split(/\s+/)
   end
 end
