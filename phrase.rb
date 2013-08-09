@@ -5,10 +5,13 @@ class Phrase
 
   def word_count
     results = Hash.new(0)
-    @words.split(/ /).each do |word|
+    tokenized_words.each do |word|
       results[word] += 1
     end
     return results
+  end
 
+  def tokenized_words
+    @words.split(/ /)
   end
 end
