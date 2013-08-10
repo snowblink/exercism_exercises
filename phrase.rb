@@ -10,8 +10,6 @@ class Phrase
   end
 
   def tokenized_words
-    @words.gsub(/,/, ' ').
-      gsub(/[^A-Za-z0-9 ]/, '').
-      split(/\s+/)
+    @words.scan(/\w+/)
   end
 end
