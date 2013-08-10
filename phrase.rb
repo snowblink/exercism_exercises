@@ -4,11 +4,10 @@ class Phrase
   end
 
   def word_count
-    results = Hash.new(0)
-    tokenized_words.each do |word|
+    tokenized_words.inject(Hash.new(0)) do |results, word|
       results[word.downcase] += 1
+      results
     end
-    return results
   end
 
   def tokenized_words
