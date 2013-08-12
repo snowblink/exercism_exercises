@@ -12,6 +12,6 @@ class Anagram
   end
 
   def permutations
-    @word.chars.permutation.map(&:join)
+    @word.chars.permutation.map(&:join) - [@word]
   end
 end

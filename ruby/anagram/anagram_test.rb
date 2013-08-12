@@ -32,7 +32,6 @@ class AnagramTest < MiniTest::Unit::TestCase
   end
 
   def test_identical_word_is_not_anagram
-    skip
     detector = Anagram.new('corn')
     anagrams = detector.match %w(corn dark Corn rank CORN park)
     assert_equal [], anagrams
