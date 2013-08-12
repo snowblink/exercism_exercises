@@ -6,12 +6,12 @@ class Anagram
   def match(possible_anagrams)
     possible_anagrams.find_all do |anagram|
       permutations.any? do |permutation|
-        anagram == permutation
+        anagram.downcase == permutation
       end
     end
   end
 
   def permutations
-    @word.chars.permutation.map(&:join) - [@word]
+    @word.downcase.chars.permutation.map(&:join) - [@word]
   end
 end
