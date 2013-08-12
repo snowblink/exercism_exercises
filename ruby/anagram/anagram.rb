@@ -12,6 +12,6 @@ class Anagram
   end
 
   def permutations
-    @word.downcase.chars.permutation.map(&:join) - [@word]
+    @_permutations ||= @word.downcase.chars.permutation.map(&:join) - [@word]
   end
 end
