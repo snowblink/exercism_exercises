@@ -5,9 +5,7 @@ class Anagram
 
   def match(possible_anagrams)
     possible_anagrams.find_all do |anagram|
-      permutations.any? do |permutation|
-        anagram.downcase == permutation
-      end
+      permutations.include?(anagram.downcase)
     end
   end
 
