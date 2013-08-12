@@ -21,14 +21,12 @@ class AnagramTest < MiniTest::Unit::TestCase
   end
 
   def test_detect_multiple_anagrams
-    skip
     detector = Anagram.new('master')
     anagrams = detector.match(['stream', 'pigeon', 'maters'])
     assert_equal ['stream', 'maters'], anagrams
   end
 
   def test_does_not_confuse_different_duplicates
-    skip
     detector = Anagram.new('galea')
     assert_equal [], detector.match(['eagle'])
   end
