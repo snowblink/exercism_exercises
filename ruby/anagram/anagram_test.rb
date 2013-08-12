@@ -49,7 +49,6 @@ class AnagramTest < MiniTest::Unit::TestCase
   end
 
   def test_multiple_anagrams
-    skip
     detector = Anagram.new('allergy')
     anagrams = detector.match %w(gallery ballerina regally clergy largely leading)
     assert_equal ['gallery', 'regally', 'largely'], anagrams
