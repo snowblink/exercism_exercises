@@ -13,7 +13,7 @@ var Bob = function(){
         if (noise.question()) {
             return "Sure.";
         }
-        
+
         return "Whatever.";
     }
 }
@@ -26,11 +26,11 @@ var Noise = function(noise){
     }
 
     this.question = function(){
-        return (noise.match(/\?$/));
+        return (noise.slice(-1) == "?");
     }
 
     this.silence = function(){
-        return (noise.match(/^\s*$/));
+        return (noise.trim().length == 0);
     }
 }
 
