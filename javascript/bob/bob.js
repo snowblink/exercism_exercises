@@ -4,13 +4,17 @@ var Bob = function(){
 
         if (noise.silence()){
             return "Fine. Be that way!";
-        } else if (noise.shouting()){
-            return "Woah, chill out!";
-        } else if (noise.question()) {
-            return "Sure.";
-        } else {
-            return "Whatever.";
         }
+
+        if (noise.shouting()){
+            return "Woah, chill out!";
+        }
+
+        if (noise.question()) {
+            return "Sure.";
+        }
+        
+        return "Whatever.";
     }
 }
 
