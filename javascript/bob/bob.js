@@ -2,7 +2,9 @@ var Bob = function(){
     this.hey = function(noise){
         var noise = new Noise(noise);
 
-        if (noise.shouting()){
+        if (noise.silence()){
+            return "Fine. Be that way!";
+        } else if (noise.shouting()){
             return "Woah, chill out!";
         } else if (noise.question()) {
             return "Sure.";
@@ -21,6 +23,10 @@ var Noise = function(noise){
 
     this.question = function(){
         return (noise.match(/\?$/));
+    }
+
+    this.silence = function(){
+        return (noise.match(/^\s*$/));
     }
 }
 
