@@ -16,7 +16,7 @@ var Bob = function(){
 
         return "Whatever.";
     }
-}
+};
 
 var Noise = function(noise){
     var noise = noise;
