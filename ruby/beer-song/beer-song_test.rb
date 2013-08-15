@@ -1,4 +1,9 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'minitest/autorun'
+require "minitest/reporters"
+MiniTest::Reporters.use!
 require_relative 'beer'
 
 class BeerTest < MiniTest::Unit::TestCase
