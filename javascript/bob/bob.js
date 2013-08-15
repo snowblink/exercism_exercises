@@ -30,7 +30,7 @@ var Noise = function(noise){
     }
 
     this.silence = function(){
-        return (noise.trim().length == 0);
+        return (noise.trim() == false);
     }
 }
 
