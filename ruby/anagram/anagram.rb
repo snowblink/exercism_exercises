@@ -5,11 +5,20 @@ class Anagram
 
   def match(possible_anagrams)
     possible_anagrams.find_all do |anagram|
-      permutations.include?(anagram.downcase)
+      permutations_except_self.include?(anagram.downcase)
     end
   end
 
+private
+  def permutations_except_self
+    @_permutations_except_self ||= permutations - [@word]
+  end
+
   def permutations
-    @_permutations ||= @word.downcase.chars.permutation.map(&:join) - [@word]
+    @_permutations ||= each_character.permutation.map(&:join)
+  end
+
+  def each_character
+    @_each_character ||= @word.downcase.chars
   end
 end
