@@ -26,13 +26,13 @@ describe("Words", function() {
     expect(words.count).toEqual(expectedCounts);
   });
 
-  xit("includes numbers", function() {
+  it("includes numbers", function() {
     var words = new Words("testing, 1, 2 testing");
     var expectedCounts = { "testing" : 2, "1" : 1, "2" : 1 };
     expect(words.count).toEqual(expectedCounts);
   });
 
-  xit("normalizes case", function() {
+  it("normalizes case", function() {
     var words = new Words("go Go GO");
     var expectedCounts = { "go" : 3 };
     expect(words.count).toEqual(expectedCounts);
