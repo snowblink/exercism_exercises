@@ -6,7 +6,7 @@ count = function(words){
     var result = {};
 
     for (var i=0; i < words.length; i++){
-        var word = words[i];
+        var word = words[i].toLowerCase();
         if (word){ // ignore empty strings
             if (result[word] == undefined)
                 result[word] = 1;
