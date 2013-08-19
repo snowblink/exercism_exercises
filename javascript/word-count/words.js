@@ -1,5 +1,5 @@
 function Words(words) {
-    this.count = count(words_as_array(remove_punctuation(words)));
+    this.count = count(separateWords(remove_punctuation(words)));
 }
 
 count = function(words){
@@ -18,7 +18,7 @@ count = function(words){
     return result;
 };
 
-words_as_array = function(words){
+separateWords = function(words){
     return words.split(/\s+/);
 };
 
