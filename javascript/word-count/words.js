@@ -1,5 +1,5 @@
 function Words(words) {
-    this.count = count(separateWords(remove_punctuation(words)));
+    this.count = count(findWords(words));
 }
 
 count = function(words){
@@ -18,12 +18,8 @@ count = function(words){
     return result;
 };
 
-separateWords = function(words){
-    return words.split(/\s+/);
+findWords = function(words){
+    return words.match(/\w+/g);
 };
-
-remove_punctuation = function(words){
-    return words.replace(/[^ A-Za-z0-9]/g, ' ')
-}
 
 module.exports = Words;
