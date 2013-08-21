@@ -10,7 +10,7 @@ class Beer
     lines.join("\n") + "\n"
   end
 
-  def sing(starting, ending)
+  def sing(starting, ending = 0)
     (ending..starting).each_with_object([]) do |num, memo|
       memo << verse(num)
     end.reverse.join("\n") + "\n"
