@@ -2,23 +2,21 @@ function Words(words) {
     this.count = count(findWords(words));
 }
 
-count = function(words){
-    var result = {};
+var count = function(words){
 
-    for (var i=0; i < words.length; i++){
-        var word = words[i].toLowerCase();
-        if (word){ // ignore empty strings
-            if (result[word] == undefined)
-                result[word] = 1;
-            else
-                result[word] +=1;
+    return words.reduce(function(memo, current){
+        current = current.toLowerCase();
+        if (memo[current] == undefined){
+            memo[current] = 1;
+        } else {
+            memo[current] += 1;
         }
+        return memo;
+    }, {});
 
-    }
-    return result;
 };
 
-findWords = function(words){
+var findWords = function(words){
     return words.match(/\w+/g);
 };
 
