@@ -11,11 +11,20 @@ class Beer
   end
 
   def on_the_wall
-    "#{num_bottles} bottles of beer on the wall, #{num_bottles} bottles of beer."
+    "#{x_bottles(num_bottles)} on the wall, #{x_bottles(num_bottles)}."
   end
 
   def pass_it_around
-    "Take one down and pass it around, #{next_bottle} bottles of beer on the wall."
+    "Take #{num_bottles == 1 ? 'it' : 'one'} down and pass it around, #{x_bottles(next_bottle)} on the wall."
+  end
+
+  def x_bottles(num)
+    case num
+    when 1; "1 bottle of beer"
+    when 0; "no more bottles of beer"
+    else
+      "#{num} bottles of beer"
+    end
   end
 
   def next_bottle
