@@ -10,6 +10,12 @@ class Beer
     lines.join("\n") + "\n"
   end
 
+  def sing(starting, ending)
+    (ending..starting).each_with_object([]) do |num, memo|
+      memo << verse(num)
+    end.reverse.join("\n") + "\n"
+  end
+
   def on_the_wall
     "#{x_bottles(num_bottles).capitalize} on the wall, #{x_bottles(num_bottles)}."
   end
