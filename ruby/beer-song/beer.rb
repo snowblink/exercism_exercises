@@ -11,11 +11,15 @@ class Beer
   end
 
   def on_the_wall
-    "#{x_bottles(num_bottles)} on the wall, #{x_bottles(num_bottles)}."
+    "#{x_bottles(num_bottles).capitalize} on the wall, #{x_bottles(num_bottles)}."
   end
 
   def pass_it_around
-    "Take #{num_bottles == 1 ? 'it' : 'one'} down and pass it around, #{x_bottles(next_bottle)} on the wall."
+    if no_more_bottles?
+      "Go to the store and buy some more,"
+    else
+      "Take #{num_bottles == 1 ? 'it' : 'one'} down and pass it around,"
+    end + " #{x_bottles(next_bottle)} on the wall."
   end
 
   def x_bottles(num)
@@ -28,6 +32,14 @@ class Beer
   end
 
   def next_bottle
-    num_bottles - 1
+    if no_more_bottles?
+      99
+    else
+      num_bottles - 1
+    end
+  end
+
+  def no_more_bottles?
+    num_bottles == 0
   end
 end
