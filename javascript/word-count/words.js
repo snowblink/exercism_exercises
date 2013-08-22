@@ -6,11 +6,10 @@ var count = function(words){
 
     return words.reduce(function(memo, current){
         current = current.toLowerCase();
-        if (memo[current] == undefined){
-            memo[current] = 1;
-        } else {
-            memo[current] += 1;
-        }
+
+        memo[current] = memo[current] || 0
+        memo[current] += 1;
+
         return memo;
     }, {});
 
