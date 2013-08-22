@@ -1,5 +1,7 @@
 function Words(words) {
-    this.count = findWords(words).reduce(function(memo, current){
+    this.findWords = words.match(/\w+/g);
+
+    this.count = this.findWords.reduce(function(memo, current){
         current = current.toLowerCase();
 
         memo[current] = memo[current] || 0
@@ -7,10 +9,6 @@ function Words(words) {
 
         return memo;
     }, {});
-};
-
-var findWords = function(words){
-    return words.match(/\w+/g);
 };
 
 module.exports = Words;
