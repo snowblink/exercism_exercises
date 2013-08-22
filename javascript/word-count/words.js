@@ -1,10 +1,5 @@
 function Words(words) {
-    this.count = count(findWords(words));
-}
-
-var count = function(words){
-
-    return words.reduce(function(memo, current){
+    this.count = findWords(words).reduce(function(memo, current){
         current = current.toLowerCase();
 
         memo[current] = memo[current] || 0
@@ -12,7 +7,6 @@ var count = function(words){
 
         return memo;
     }, {});
-
 };
 
 var findWords = function(words){
