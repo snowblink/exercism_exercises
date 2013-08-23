@@ -11,11 +11,11 @@ function Anagram(subject){
     };
 
     var isAnagramOf = function(a, b){
-        // console.log(a.toLowerCase().split('').sort().join(''));
-        // console.log(b.toLowerCase().split('').sort().join(''));
-        var result = a.toLowerCase().split('').sort().join('') == b.toLowerCase().split('').sort().join('');
-        // console.log(result);
-        return result;
+        if (a == b){
+            return false;
+        } else {
+            return a.toLowerCase().split('').sort().join('') == b.toLowerCase().split('').sort().join('');
+        }
     };
 }
 
