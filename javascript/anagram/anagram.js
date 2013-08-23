@@ -14,8 +14,12 @@ function Anagram(subject){
         if (a == b){
             return false;
         } else {
-            return a.toLowerCase().split('').sort().join('') == b.toLowerCase().split('').sort().join('');
+            return normalizeString(a) == normalizeString(b);
         }
+    };
+
+    var normalizeString = function(string){
+        return string.toLowerCase().split('').sort().join('');
     };
 }
 
