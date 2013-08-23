@@ -32,7 +32,7 @@ describe('Anagram', function() {
     expect(matches).toEqual([]);
   });
 
-  xit("detects anagram",function() {
+  it("detects anagram",function() {
     var detector = new Anagram("listen");
     var matches = detector.match(['enlists', 'google', 'inlets', 'banana']);
     expect(matches).toEqual(['inlets']);
