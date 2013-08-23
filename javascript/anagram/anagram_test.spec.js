@@ -14,7 +14,7 @@ describe('Anagram', function() {
     expect(matches).toEqual(['tan']);
   });
 
-  xit("does not detect false positives",function() {
+  it("does not detect false positives",function() {
     var detector = new Anagram("galea");
     var matches = detector.match(["eagle"]);
     expect(matches).toEqual([]);
