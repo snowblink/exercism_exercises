@@ -8,7 +8,7 @@ describe('Anagram', function() {
     expect(matches).toEqual([]);
   });
 
-  xit("detects simple anagram",function() {
+  it("detects simple anagram",function() {
     var detector = new Anagram("ant");
     var matches = detector.match(['tan', 'stand', 'at']);
     expect(matches).toEqual(['tan']);
