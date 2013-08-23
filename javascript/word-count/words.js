@@ -1,11 +1,9 @@
-function Words(words) {
+function Words(sentence) {
     "use strict";
 
-    var findWords = words.match(/\w+/g);
+    var foundWords = sentence.toLowerCase().match(/\w+/g);
 
-    this.count = findWords.reduce(function(memo, current){
-        current = current.toLowerCase();
-
+    this.count = foundWords.reduce(function(memo, current){
         memo[current] = memo[current] || 0;
         memo[current] += 1;
 
