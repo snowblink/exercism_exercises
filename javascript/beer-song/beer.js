@@ -38,7 +38,18 @@ Beer.verse = function(number){
         };
 
     return onTheWall + drinkOne();
+};
 
+Beer.sing = function(start, end){
+    "use strict";
+    var result = "";
+    for(var i=start; i >= end; i--){
+        result += this.verse(i);
+        if (i != end){
+            result += "\n";
+        }
+    }
+    return result;
 
 };
 
