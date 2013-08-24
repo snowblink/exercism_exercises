@@ -6,10 +6,22 @@ Beer.verse = function(number){
 
     var nextNumber = number - 1;
 
-    return number + " bottles of beer on the wall, " +
-    number + " bottles of beer.\n" +
-    "Take one down and pass it around, " +
-    nextNumber + " bottles of beer on the wall.\n";
+    var bottlesOfBeer = function(number){
+        if (number == 1){
+            return "1 bottle of beer";
+        } else if (number === 0) {
+            return "no more bottles of beer";
+        } else {
+            return number + " bottles of beer";
+        }
+    };
+
+    return bottlesOfBeer(number) + " on the wall, " +
+    bottlesOfBeer(number) + ".\n" +
+    "Take " +
+    (number === 1 ? "it" : "one") +
+    " down and pass it around, " +
+    bottlesOfBeer(nextNumber) + " on the wall.\n";
 };
 
 module.exports = Beer;
