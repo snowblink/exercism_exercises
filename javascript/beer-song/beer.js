@@ -42,6 +42,7 @@ Beer.verse = function(number){
 
 Beer.sing = function(start, end){
     "use strict";
+    end = end || 0;
     var result = "";
     for(var i=start; i >= end; i--){
         result += this.verse(i);
