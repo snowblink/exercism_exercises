@@ -8,11 +8,7 @@ function Anagram(subject){
     };
 
     var isAnagramOf = function(a, b) {
-        if (a == b){
-            return false;
-        } else {
-            return normalizeString(a) == normalizeString(b);
-        }
+        return (a != b) && (normalizeString(a) == normalizeString(b));
     };
 
     var normalizeString = function(string) {
