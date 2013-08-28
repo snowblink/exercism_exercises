@@ -16,6 +16,7 @@ class Beer
     end.reverse.join("\n") + "\n"
   end
 
+private
   def on_the_wall
     "#{x_bottles(num_bottles).capitalize} on the wall, #{x_bottles(num_bottles)}."
   end
