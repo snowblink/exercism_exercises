@@ -11,9 +11,9 @@ class Beer
   end
 
   def sing(starting, ending = 0)
-    (ending..starting).each_with_object([]) do |num, memo|
+    starting.downto(ending).each_with_object([]) do |num, memo|
       memo << verse(num)
-    end.reverse.join("\n") + "\n"
+    end.join("\n") + "\n"
   end
 
 private
