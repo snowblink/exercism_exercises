@@ -18,7 +18,7 @@ class Beer
 
 private
   def on_the_wall
-    "#{x_bottles(num_bottles).capitalize} on the wall, #{x_bottles(num_bottles)}."
+    "#{x_bottles(num_bottles)} on the wall, #{x_bottles(num_bottles)}.".capitalize
   end
 
   def pass_it_around
