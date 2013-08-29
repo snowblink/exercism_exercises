@@ -20,22 +20,22 @@ Beer.verse = function(number){
     };
 
     var onTheWall = bottlesOfBeer(number).capitalize() +
-        " on the wall, " +
-        bottlesOfBeer(number) + ".\n";
+    " on the wall, " +
+    bottlesOfBeer(number) + ".\n";
 
-        var drinkOne = function(){
-            var result = "";
-            if (nextNumber === 99){
-                result += "Go to the store and buy some more, ";
-            } else {
+    var drinkOne = function(){
+        var result = "";
+        if (nextNumber === 99){
+            result += "Go to the store and buy some more, ";
+        } else {
             result += "Take " +
             (number === 1 ? "it" : "one") +
             " down and pass it around, ";
-            }
+        }
 
-            result += bottlesOfBeer(nextNumber) + " on the wall.\n";
-            return result;
-        };
+        result += bottlesOfBeer(nextNumber) + " on the wall.\n";
+        return result;
+    };
 
     return onTheWall + drinkOne();
 };
