@@ -3,11 +3,11 @@ function Anagram(subject){
 
     this.match = function(possibleAnagrams) {
         return possibleAnagrams.filter(function(currentAnagram){
-            return (isAnagramOf(currentAnagram, subject));
+            return (areAnagramFriends(currentAnagram, subject));
         });
     };
 
-    var isAnagramOf = function(a, b) {
+    var areAnagramFriends = function(a, b) {
         return (a != b) && (normalizeString(a) == normalizeString(b));
     };
 
