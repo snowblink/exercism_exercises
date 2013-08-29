@@ -22,11 +22,19 @@ private
   end
 
   def pass_it_around
-    if no_more_bottles?
-      "Go to the store and buy some more,"
-    else
-      "Take #{num_bottles == 1 ? 'it' : 'one'} down and pass it around,"
-    end + " #{x_bottles(next_bottle)} on the wall."
+    (no_more_bottles? ? go_to_the_store : take_one_down) + whatever_is_left
+  end
+
+  def whatever_is_left
+    " #{x_bottles(next_bottle)} on the wall."
+  end
+
+  def take_one_down
+    "Take #{num_bottles == 1 ? 'it' : 'one'} down and pass it around,"
+  end
+
+  def go_to_the_store
+    "Go to the store and buy some more,"
   end
 
   def x_bottles(num)
