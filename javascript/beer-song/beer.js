@@ -1,46 +1,34 @@
 function Beer(){
 }
 
-Beer.verse = function(number){
+Beer.verse = function(number) {
     "use strict";
 
-    var nextNumber = number - 1;
-    if (nextNumber < 0){
-        nextNumber = 99;
-    }
+    var currentBottle = new Bottle(number);
+    var nextBottle = new Bottle(number - 1);
 
-    var bottlesOfBeer = function(number){
-        if (number == 1){
-            return "1 bottle of beer";
-        } else if (number === 0) {
-            return "no more bottles of beer";
-        } else {
-            return number + " bottles of beer";
-        }
-    };
+    var onTheWall = (currentBottle.bottlesOfBeer() +
+        " on the wall, " +
+        currentBottle.bottlesOfBeer() + ".\n").capitalize();
 
-    var onTheWall = bottlesOfBeer(number).capitalize() +
-    " on the wall, " +
-    bottlesOfBeer(number) + ".\n";
-
-    var drinkOne = function(){
+    var drinkOne = (function() {
         var result = "";
-        if (nextNumber === 99){
+        if (currentBottle.lastBottle()){
             result += "Go to the store and buy some more, ";
         } else {
             result += "Take " +
-            (number === 1 ? "it" : "one") +
+            currentBottle.takeItOrOne() +
             " down and pass it around, ";
         }
 
-        result += bottlesOfBeer(nextNumber) + " on the wall.\n";
+        result += nextBottle.bottlesOfBeer() + " on the wall.\n";
         return result;
-    };
+    })();
 
-    return onTheWall + drinkOne();
+    return onTheWall + drinkOne;
 };
 
-Beer.sing = function(start, end){
+Beer.sing = function(start, end) {
     "use strict";
     end = end || 0;
     var result = "";
@@ -52,6 +40,36 @@ Beer.sing = function(start, end){
     }
     return result;
 
+};
+
+function Bottle(number) {
+    "use strict";
+    if (number < 0){
+        this.number = 99;
+    } else {
+        this.number = number;
+    }
+}
+
+Bottle.prototype.lastBottle = function() {
+    "use strict";
+    return this.number === 0;
+};
+
+Bottle.prototype.takeItOrOne = function() {
+    "use strict";
+    return this.number === 1 ? "it" : "one";
+};
+
+Bottle.prototype.bottlesOfBeer = function() {
+    "use strict";
+    if (this.number == 1){
+       return "1 bottle of beer";
+    } else if (this.number === 0) {
+        return "no more bottles of beer";
+    } else {
+        return this.number + " bottles of beer";
+    }
 };
 
 String.prototype.capitalize = function() {
