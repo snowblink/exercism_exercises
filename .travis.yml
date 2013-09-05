@@ -5,6 +5,11 @@ node_js:
   - "0.8"
   - "0.6"
 
-script: jasmine-node ./javascript/beer-song/beer-song_test.spec.js
+script:
+  - jasmine-node ./javascript/beer-song/beer-song_test.spec.js
+  - jasmine-node ./javascript/anagram/anagram_test.spec.js
+  - jasmine-node ./javascript/word-count/word-count_test.spec.js
+  - jasmine-node ./javascript/bob/bob_test.spec.js
+
 before_script:
-    - "npm i -g jasmine-node"
+  - "npm i -g jasmine-node"
