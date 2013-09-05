@@ -7,25 +7,24 @@ Beer.verse = function(number) {
     var currentBottle = new Bottle(number);
     var nextBottle = new Bottle(number - 1);
 
-    var onTheWall = (currentBottle.bottlesOfBeer() +
-        " on the wall, " +
-        currentBottle.bottlesOfBeer() + ".\n").capitalize();
+    var result = "";
+    result += currentBottle.bottlesOfBeer().capitalize();
+    result += " on the wall, ";
+    result += currentBottle.bottlesOfBeer();
+    result += ".\n";
 
-    var drinkOne = (function() {
-        var result = "";
-        if (currentBottle.lastBottle()){
-            result += "Go to the store and buy some more, ";
-        } else {
-            result += "Take " +
-            currentBottle.takeItOrOne() +
-            " down and pass it around, ";
-        }
+    if (currentBottle.lastBottle()){
+        result += "Go to the store and buy some more, ";
+    } else {
+        result += "Take " +
+        currentBottle.takeItOrOne() +
+        " down and pass it around, ";
+    }
 
-        result += nextBottle.bottlesOfBeer() + " on the wall.\n";
-        return result;
-    })();
+    result += nextBottle.bottlesOfBeer();
+    result += " on the wall.\n";
 
-    return onTheWall + drinkOne;
+    return result;
 };
 
 Beer.sing = function(start, end) {
