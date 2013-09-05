@@ -6,3 +6,5 @@ node_js:
   - "0.6"
 
 script: jasmine-node ./javascript/beer-song/beer-song_test.spec.js
+before_script:
+    - "npm i -g jasmine-node"
