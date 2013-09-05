@@ -23,27 +23,28 @@ class Beer
     if current_bottle.last_bottle?
       "Go to the store and buy some more,"
     else
-      "Take #{current_bottle.take_it} down and pass it around,"
+      "Take #{current_bottle.take_it_or_one} down and pass it around,"
     end + " #{current_bottle.next_bottle} on the wall."
   end
 end
 
 class Bottle
+  attr_reader :number
   def initialize(number)
     @number = number
   end
 
   def to_s
-    case @number
+    case number
     when 1; "1 bottle of beer"
     when 0; "no more bottles of beer"
     else
-      "#{@number} bottles of beer"
+      "#{number} bottles of beer"
     end
   end
 
-  def take_it
-    if @number == 1
+  def take_it_or_one
+    if number == 1
       "it"
     else
       "one"
@@ -54,11 +55,11 @@ class Bottle
     if last_bottle?
       Bottle.new(99)
     else
-      Bottle.new(@number - 1)
+      Bottle.new(number - 1)
     end
   end
 
   def last_bottle?
-    @number == 0
+    number == 0
   end
 end
