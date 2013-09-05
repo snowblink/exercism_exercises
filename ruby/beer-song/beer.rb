@@ -1,4 +1,5 @@
 class Beer
+  attr_reader :current_bottle
   def verse(num_bottles)
     @current_bottle = Bottle.new(num_bottles)
 
@@ -15,15 +16,15 @@ class Beer
   end
 
   def on_the_wall
-    "#{@current_bottle} on the wall, #{@current_bottle}.".capitalize
+    "#{current_bottle} on the wall, #{current_bottle}.".capitalize
   end
 
   def pass_it_around
-    if @current_bottle.last_bottle?
+    if current_bottle.last_bottle?
       "Go to the store and buy some more,"
     else
-      "Take #{@current_bottle.take_it} down and pass it around,"
-    end + " #{@current_bottle.next_bottle} on the wall."
+      "Take #{current_bottle.take_it} down and pass it around,"
+    end + " #{current_bottle.next_bottle} on the wall."
   end
 end
 
