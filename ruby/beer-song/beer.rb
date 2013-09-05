@@ -1,8 +1,7 @@
 class Beer
-  attr_reader :num_bottles
-
+  attr_reader :current_bottle
   def verse(num_bottles)
-    @num_bottles = num_bottles
+    @current_bottle = Bottle.new(num_bottles)
 
     lines = []
     lines << on_the_wall
@@ -11,41 +10,56 @@ class Beer
   end
 
   def sing(starting, ending = 0)
-    (ending..starting).each_with_object([]) do |num, memo|
+    starting.downto(ending).each_with_object([]) do |num, memo|
       memo << verse(num)
-    end.reverse.join("\n") + "\n"
+    end.join("\n") + "\n"
   end
 
   def on_the_wall
-    "#{x_bottles(num_bottles).capitalize} on the wall, #{x_bottles(num_bottles)}."
+    "#{current_bottle} on the wall, #{current_bottle}.".capitalize
   end
 
   def pass_it_around
-    if no_more_bottles?
+    if current_bottle.last_bottle?
       "Go to the store and buy some more,"
     else
-      "Take #{num_bottles == 1 ? 'it' : 'one'} down and pass it around,"
-    end + " #{x_bottles(next_bottle)} on the wall."
+      "Take #{current_bottle.take_it_or_one} down and pass it around,"
+    end + " #{current_bottle.next_bottle} on the wall."
+  end
+end
+
+class Bottle
+  attr_reader :number
+  def initialize(number)
+    @number = number
   end
 
-  def x_bottles(num)
-    case num
+  def to_s
+    case number
     when 1; "1 bottle of beer"
     when 0; "no more bottles of beer"
     else
-      "#{num} bottles of beer"
+      "#{number} bottles of beer"
+    end
+  end
+
+  def take_it_or_one
+    if number == 1
+      "it"
+    else
+      "one"
     end
   end
 
   def next_bottle
-    if no_more_bottles?
-      99
+    if last_bottle?
+      Bottle.new(99)
     else
-      num_bottles - 1
+      Bottle.new(number - 1)
     end
   end
 
-  def no_more_bottles?
-    num_bottles == 0
+  def last_bottle?
+    number == 0
   end
 end
