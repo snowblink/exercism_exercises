@@ -72,8 +72,15 @@ Bottle.prototype.bottlesOfBeer = function() {
     }
 };
 
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-};
+if(!String.prototype.capitalize){
+    Object.defineProperty(String.prototype, 'capitalize',
+    {
+        value: function()
+        {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        },
+        enumerable: false
+    });
+}
 
 module.exports = Beer;
