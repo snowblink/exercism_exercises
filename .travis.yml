@@ -10,6 +10,7 @@ script:
   - jasmine-node ./javascript/anagram/anagram_test.spec.js
   - jasmine-node ./javascript/word-count/word-count_test.spec.js
   - jasmine-node ./javascript/bob/bob_test.spec.js
+  - ruby -w ./ruby/bob/bob_test.rb
 
 before_script:
   - "npm i -g jasmine-node"
