@@ -1,18 +1,24 @@
+class BeerArray < Array
+  def join_with_newlines_and_end_with_newline
+    self.join("\n") + "\n"
+  end
+end
+
 class Beer
   attr_reader :current_bottle
   def verse(num_bottles)
     @current_bottle = Bottle.new(num_bottles)
 
-    lines = []
+    lines = BeerArray.new
     lines << on_the_wall
     lines << pass_it_around
-    lines.join("\n") + "\n"
+    lines.join_with_newlines_and_end_with_newline
   end
 
   def sing(starting, ending = 0)
-    starting.downto(ending).each_with_object([]) do |num, memo|
+    starting.downto(ending).each_with_object(BeerArray.new) do |num, memo|
       memo << verse(num)
-    end.join("\n") + "\n"
+    end.join_with_newlines_and_end_with_newline
   end
 
   def on_the_wall
