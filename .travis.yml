@@ -8,8 +8,11 @@ gemfile:
 
 script:
   - jasmine-node ./javascript/beer-song/beer-song_test.spec.js
+  - ruby -w ./ruby/beer-song/beer-song_test.rb
   - jasmine-node ./javascript/anagram/anagram_test.spec.js
+  - ruby -w ./ruby/anagram/anagram_test.rb
   - jasmine-node ./javascript/word-count/word-count_test.spec.js
+  - ruby -w ./ruby/word-count/word-count_test.rb
   - jasmine-node ./javascript/bob/bob_test.spec.js
   - ruby -w ./ruby/bob/bob_test.rb
 
