@@ -5,6 +5,12 @@ node_js:
   - "0.8"
   - "0.6"
 
+rvm:
+  - "2.0.0"
+
+gemfile:
+  - ./ruby/bob/Gemfile
+
 script:
   - jasmine-node ./javascript/beer-song/beer-song_test.spec.js
   - jasmine-node ./javascript/anagram/anagram_test.spec.js
