@@ -1,5 +1,5 @@
-class BeerArray < Array
-  def join_with_newlines_and_end_with_newline
+class Verse < Array
+  def to_s
     self.join("\n") + "\n"
   end
 end
@@ -9,16 +9,16 @@ class Beer
   def verse(num_bottles)
     @current_bottle = Bottle.new(num_bottles)
 
-    lines = BeerArray.new
+    lines = Verse.new
     lines << on_the_wall
     lines << pass_it_around
-    lines.join_with_newlines_and_end_with_newline
+    lines.to_s
   end
 
   def sing(starting, ending = 0)
-    starting.downto(ending).each_with_object(BeerArray.new) do |num, memo|
+    starting.downto(ending).each_with_object(Verse.new) do |num, memo|
       memo << verse(num)
-    end.join_with_newlines_and_end_with_newline
+    end.to_s
   end
 
   def on_the_wall
