@@ -8,7 +8,7 @@ describe('DNA', function() {
     expect(dna.nucleotideCounts).toEqual(expected);
   });
 
-  xit('has no adenosine', function(){
+  it('has no adenosine', function(){
     var dna = new DNA('');
     expect(dna.count('A')).toEqual(0);
   });

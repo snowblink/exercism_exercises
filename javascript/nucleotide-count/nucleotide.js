@@ -1,18 +1,17 @@
 function DNA(nucleotideSequence){
     "use strict";
 
-    var nucleotideCountOf = function(char){
+    this.count = function(char){
         // return nucleotideSequence.split(char).length - 1;
         return 0;
     };
 
     this.nucleotideCounts = {
-        A: nucleotideCountOf('A'),
-        T: nucleotideCountOf('T'),
-        C: nucleotideCountOf('C'),
-        G: nucleotideCountOf('G')
+        A: this.count('A'),
+        T: this.count('T'),
+        C: this.count('C'),
+        G: this.count('G')
     };
-
 }
 
 module.exports = DNA;
