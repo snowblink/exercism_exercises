@@ -2,8 +2,7 @@ function DNA(nucleotideSequence){
     "use strict";
 
     this.count = function(char){
-        // return nucleotideSequence.split(char).length - 1;
-        return 0;
+        return nucleotideSequence.split(char).length - 1;
     };
 
     this.nucleotideCounts = {

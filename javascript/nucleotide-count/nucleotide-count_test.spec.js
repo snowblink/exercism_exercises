@@ -13,7 +13,7 @@ describe('DNA', function() {
     expect(dna.count('A')).toEqual(0);
   });
 
-  xit('repetitive cytidine gets counts', function(){
+  it('repetitive cytidine gets counts', function(){
     var dna = new DNA('CCCCC');
     expect(dna.count('C')).toEqual(5);
   });
