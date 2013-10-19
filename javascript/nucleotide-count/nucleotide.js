@@ -1,8 +1,12 @@
 function DNA(nucleotideSequence){
     "use strict";
 
-    this.count = function(char){
-        return nucleotideSequence.split(char).length - 1;
+    this.count = function(nucleotide){
+        if (validNucleotide(nucleotide)){
+            return nucleotideSequence.split(nucleotide).length - 1;
+        } else {
+            throw "Invalid Nucleotide";
+        }
     };
 
     this.nucleotideCounts = {
@@ -12,5 +16,9 @@ function DNA(nucleotideSequence){
         G: this.count('G')
     };
 }
+
+validNucleotide = function(nucleotide){
+    return nucleotide.match(/[ATCGU]/);
+};
 
 module.exports = DNA;

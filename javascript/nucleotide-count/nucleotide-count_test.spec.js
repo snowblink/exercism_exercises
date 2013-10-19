@@ -40,7 +40,7 @@ describe('DNA', function() {
     expect(dna.count('U')).toEqual(0);
   });
 
-  xit('validates nucleotides', function(){
+  it('validates nucleotides', function(){
     var dna = new DNA('GGTTGG');
     expect(function(){
       dna.count('X');
