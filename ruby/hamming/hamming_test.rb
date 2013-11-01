@@ -1,4 +1,10 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'minitest/autorun'
+require "minitest/reporters"
+MiniTest::Reporters.use!
+
 require_relative 'hamming'
 
 class HammingTest < MiniTest::Unit::TestCase
@@ -7,7 +13,6 @@ class HammingTest < MiniTest::Unit::TestCase
   end
 
   def test_no_difference_between_identical_strands
-    skip
     assert_equal 0, Hamming.compute('GGACTGA','GGACTGA')
   end
 
