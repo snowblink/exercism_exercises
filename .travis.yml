@@ -7,6 +7,7 @@ gemfile:
   - ./ruby/bob/Gemfile
 
 script:
+  - ruby -w ./ruby/leap/leap_test.rb
   - ruby -w ./ruby/hamming/hamming_test.rb
   - jasmine-node ./javascript/nucleotide-count/nucleotide-count_test.spec.js
   - jasmine-node ./javascript/beer-song/beer-song_test.spec.js

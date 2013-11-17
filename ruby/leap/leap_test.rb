@@ -1,5 +1,12 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'minitest/autorun'
+require "minitest/reporters"
+MiniTest::Reporters.use!
+
 require_relative 'year'
+
 
 class YearTest < MiniTest::Unit::TestCase
   def test_vanilla_leap_year
