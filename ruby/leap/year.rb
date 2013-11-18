@@ -4,20 +4,20 @@ class Year
   end
 
   def leap?
-    (divisible_by_four? && !divisible_by_one_hundred?) ||
-    divisible_by_four_hundred?
+    (standard_leap_year? && !century?) ||
+    century_leap_year?
   end
 
 private
-  def divisible_by_four?
+  def standard_leap_year?
     @year % 4 == 0
   end
 
-  def divisible_by_one_hundred?
+  def century?
     @year % 100 == 0
   end
 
-  def divisible_by_four_hundred?
+  def century_leap_year?
     @year % 400 == 0
   end
 end
