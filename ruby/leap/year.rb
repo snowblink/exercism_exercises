@@ -10,14 +10,18 @@ class Year
 
 private
   def standard_leap_year?
-    @year % 4 == 0
+    year_divisible_by?(4)
   end
 
   def century?
-    @year % 100 == 0
+    year_divisible_by?(100)
   end
 
   def century_leap_year?
-    @year % 400 == 0
+    year_divisible_by?(400)
+  end
+
+  def year_divisible_by?(num)
+    @year % num == 0
   end
 end
