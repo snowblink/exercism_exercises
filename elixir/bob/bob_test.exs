@@ -1,4 +1,9 @@
-Code.load_file("bob.exs")
+if System.get_env("EXERCISM_TEST_EXAMPLES") do
+  Code.load_file("example.exs")
+else
+  Code.load_file("bob.exs")
+end
+
 ExUnit.start
 
 defmodule TeenagerTest do
@@ -51,5 +56,10 @@ defmodule TeenagerTest do
 
   test "question with numbers" do
     # assert Teenager.hey("4?") == "Sure."
+  end
+
+  test "shouting in Russian" do
+    # Hopefully this is Russian for "get out"
+    # assert Teenager.hey("УХОДИТЬ") == "Woah, chill out!"
   end
 end
