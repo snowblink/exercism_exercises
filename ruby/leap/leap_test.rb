@@ -1,29 +1,23 @@
-require 'rubygems'
-require 'bundler/setup'
-
 require 'minitest/autorun'
-require "minitest/reporters"
-MiniTest::Reporters.use!
-
 require_relative 'year'
 
-
 class YearTest < MiniTest::Unit::TestCase
-  def test_vanilla_leap_year
-    assert Year.new(1996).leap?
+  def test_leap_year
+    assert Year.leap?(1996)
   end
 
-  def test_any_old_year
-    refute Year.new(1997).leap?
+  def test_non_leap_year
+    skip
+    refute Year.leap?(1997)
   end
 
   def test_century
-    refute Year.new(1900).leap?
+    skip
+    refute Year.leap?(1900)
   end
 
-  def test_exceptional_century
-    assert Year.new(2400).leap?
+  def test_fourth_century
+    skip
+    assert Year.leap?(2400)
   end
-
 end
-
