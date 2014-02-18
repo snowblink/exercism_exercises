@@ -1,4 +1,6 @@
 class Grains
+  TOTAL_NUMBER_OF_SQUARES = 64
+
   def initialize
     @_square = Array.new
   end
@@ -12,7 +14,7 @@ class Grains
   end
 
   def total
-    (1..64).inject(0) do |memo, i|
+    (1..TOTAL_NUMBER_OF_SQUARES).inject(0) do |memo, i|
       memo += square(i)
     end
   end
