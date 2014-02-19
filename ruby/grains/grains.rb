@@ -1,16 +1,13 @@
 class Grains
   TOTAL_NUMBER_OF_SQUARES = 64
-
-  def initialize
-    @_square = Array.new
-  end
+  @@squares = []
 
   def square(i)
     return 1 if i == 1
-    if @_square[i].nil?
-      @_square[i] = 2 * square(i-1)
+    if @@squares[i].nil?
+      @@squares[i] = 2 * square(i-1)
     end
-    @_square[i]
+    @@squares[i]
   end
 
   def total
