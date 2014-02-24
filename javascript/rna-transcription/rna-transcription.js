@@ -4,15 +4,15 @@
 // * `A` -> `U`
 
 function toRna(dna){
+    var dna_to_rna = {
+        'G': 'C',
+        'C': 'G',
+        'A': 'U',
+        'T': 'A'
+    };
+
     return dna.replace(/./g, function(x){
-        if (x == 'G')
-            return 'C';
-        else if (x == 'C')
-            return 'G';
-        else if (x == 'A')
-            return 'U';
-        else if (x == 'T')
-            return 'A';
+        return dna_to_rna[x];
     });
 }
 
