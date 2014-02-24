@@ -7,7 +7,9 @@ gemfile:
   - ./ruby/bob/Gemfile
 
 script:
-  - jasmine-node ./javascript/rna-transcription_test.spec.js
+  - ruby -w ./ruby/grains/grains_test.rb
+  - jasmine-node ./javascript/point-mutations/point-mutations_test.spec.js
+  - jasmine-node ./javascript/rna-transcription/rna-transcription_test.spec.js
   - ruby -w ./ruby/leap/leap_test.rb
   - ruby -w ./ruby/hamming/hamming_test.rb
   - jasmine-node ./javascript/nucleotide-count/nucleotide-count_test.spec.js
