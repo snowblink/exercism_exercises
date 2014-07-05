@@ -3,16 +3,13 @@ GEM
   specs:
     ansi (1.4.3)
     builder (3.2.2)
-    hashie (2.0.5)
-    minitest (4.7.5)
-    minitest-reporters (0.14.23)
+    minitest (5.3.5)
+    minitest-reporters (1.0.4)
       ansi
       builder
-      minitest (>= 2.12, < 5.0)
-      powerbar
-    powerbar (1.0.11)
-      ansi (~> 1.4.0)
-      hashie (>= 1.1.0)
+      minitest (>= 5.0)
+      ruby-progressbar
+    ruby-progressbar (1.5.1)
 
 PLATFORMS
   ruby
