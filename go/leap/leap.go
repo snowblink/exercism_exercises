@@ -1,17 +1,12 @@
+// Leap stub file
+
+// The package name is expected by the test program.
 package leap
 
-func IsLeapYear(year int) bool {
-	return (StandardLeapYear(year) && NotCentury(year)) || CenturyLeapYear(year)
-}
+// testVersion should match the targetTestVersion in the test file.
+const testVersion = 2
 
-func StandardLeapYear(year int) bool {
-	return year%4 == 0
-}
-
-func NotCentury(year int) bool {
-	return year%100 != 0
-}
-
-func CenturyLeapYear(year int) bool {
-	return year%400 == 0
+// It's good style to write a comment here documenting IsLeapYear.
+func IsLeapYear(int) bool {
+	// Write some code here to pass the test suite.
 }
