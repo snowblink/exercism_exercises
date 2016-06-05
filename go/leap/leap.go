@@ -1,11 +1,7 @@
 package leap
 
 func IsLeapYear(year int) bool {
-	if (StandardLeapYear(year) && NotCentury(year)) || CenturyLeapYear(year) {
-		return true
-	} else {
-		return false
-	}
+	return (StandardLeapYear(year) && NotCentury(year)) || CenturyLeapYear(year)
 }
 
 func StandardLeapYear(year int) bool {
