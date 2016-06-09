@@ -4,7 +4,7 @@ rvm:
   - "2.3.1"
 
 gemfile:
-  - ./ruby/bob/Gemfile
+  - ./ruby/Gemfile
 
 script:
   - ruby -w ./ruby/rna-transcription/rna_transcription_test.rb
