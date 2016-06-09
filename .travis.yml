@@ -18,10 +18,13 @@ script:
   - ruby -w ./ruby/anagram/anagram_test.rb
   - ruby -w ./ruby/beer-song/beer-song_test.rb
   - ruby -w ./ruby/bob/bob_test.rb
+  # - ruby -w ./ruby/difference-of-squares/difference-of-squares_test.rb
   - ruby -w ./ruby/gigasecond/gigasecond_test.rb
   - ruby -w ./ruby/grains/grains_test.rb
   - ruby -w ./ruby/hamming/hamming_test.rb
   - ruby -w ./ruby/leap/leap_test.rb
+  - ruby -w ./ruby/raindrops/raindrops_test.rb
+  # - ruby -w ./ruby/sum-of-multiples/sum-of-multiples_test.rb
   - ruby -w ./ruby/rna-transcription/rna_transcription_test.rb
   - ruby -w ./ruby/word-count/word-count_test.rb
 
