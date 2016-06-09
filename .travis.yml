@@ -28,5 +28,5 @@ script:
   - ruby -w ./ruby/rna-transcription/rna_transcription_test.rb
   - ruby -w ./ruby/word-count/word-count_test.rb
 
-before_script:
-  - "npm i -g jasmine-node@1.14.2"
+# before_script:
+#   - "npm i -g jasmine-node@1.14.2"
