@@ -9,9 +9,7 @@ class Squares
   end
 
   def sum_of_squares
-    (1..number).inject(0) do |sum, num|
-      sum + num ** 2
-    end
+    sum_of(-> n { n ** 2 })
   end
 
   def difference
@@ -20,8 +18,12 @@ class Squares
 
   private
   def sum
+    sum_of(-> n { n })
+  end
+
+  def sum_of(function)
     (1..number).inject(0) do |sum, num|
-      sum + num
+      sum + function.call(num)
     end
   end
 end
