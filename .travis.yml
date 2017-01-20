@@ -24,9 +24,10 @@ script:
   - ruby -w ./ruby/grains/grains_test.rb
   - ruby -w ./ruby/hamming/hamming_test.rb
   - ruby -w ./ruby/leap/leap_test.rb
+  - ruby -w ./ruby/pangram/pangram_test.rb
   - ruby -w ./ruby/raindrops/raindrops_test.rb
-  # - ruby -w ./ruby/sum-of-multiples/sum_of_multiples_test.rb
   - ruby -w ./ruby/rna-transcription/rna_transcription_test.rb
+  # - ruby -w ./ruby/sum-of-multiples/sum_of_multiples_test.rb
   - ruby -w ./ruby/word-count/word-count_test.rb
 
 before_script:
