@@ -7,6 +7,7 @@ gemfile:
   - ./ruby/Gemfile
 
 script:
+  - go test -v ./go/hello-world
   - go test -v ./go/leap
   - jasmine-node ./javascript/anagram/anagram_test.spec.js
   - jasmine-node ./javascript/beer-song/beer-song_test.spec.js
