@@ -32,7 +32,7 @@ func (c Clock) String() string {
 	return fmt.Sprintf("%02d:%02d", c.hour, c.minute)
 }
 
-func (original_clock Clock) Add(minutes int) Clock {
-	new_clock := New(original_clock.hour, original_clock.minute+minutes)
+func (c Clock) Add(minutes int) Clock {
+	new_clock := New(c.hour, c.minute+minutes)
 	return new_clock
 }
