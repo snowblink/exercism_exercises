@@ -33,6 +33,5 @@ func (c Clock) String() string {
 }
 
 func (c Clock) Add(minutes int) Clock {
-	new_clock := New(c.hour, c.minute+minutes)
-	return new_clock
+	return New(c.hour, c.minute+minutes)
 }
