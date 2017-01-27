@@ -1,16 +1,13 @@
 package gigasecond
 
-import (
-	"math"
-	"time"
-)
+import "time"
 
 const testVersion = 4
 
-func Gigasecond() time.Duration {
-	return time.Duration(1*math.Pow(10, 9)) * time.Second
+func gigasecond() time.Duration {
+	return time.Duration(1e9) * time.Second
 }
 
 func AddGigasecond(t time.Time) time.Time {
-	return t.Add(Gigasecond())
+	return t.Add(gigasecond())
 }
