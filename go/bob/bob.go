@@ -28,36 +28,35 @@ const fine = "Fine. Be that way!"
 // Bob's respond method
 func Hey(remark string) string {
 	remark = strings.TrimSpace(remark)
-	if IsSilent(remark) {
+	if isSilent(remark) {
 		return fine
 	}
-	if IsAQuestion(remark) {
-		if IsShouting(remark) && HasLetters(remark) {
+	if isAQuestion(remark) {
+		if isShouting(remark) && hasLetters(remark) {
 			return calm
-		} else {
-			return sure
 		}
+		return sure
 	}
-	if IsShouting(remark) && HasLetters(remark) {
+	if isShouting(remark) && hasLetters(remark) {
 		return chill
 	}
 	return whatever
 }
 
-func IsShouting(s string) bool {
+func isShouting(s string) bool {
 	return strings.ToUpper(s) == s
 }
 
-func IsAQuestion(s string) bool {
+func isAQuestion(s string) bool {
 	return s[len(s)-1:] == "?"
 }
 
-func HasLetters(s string) bool {
+func hasLetters(s string) bool {
 	r := regexp.MustCompile(`[[:alpha:]]`)
 	return r.MatchString(s)
 }
 
-func IsSilent(s string) bool {
+func isSilent(s string) bool {
 	r := regexp.MustCompile(`^[[:space:]]*$`)
 	return len(s) == 0 || r.MatchString(s)
 }
