@@ -1,17 +1,4 @@
-/*
-Bob is a lackadaisical teenager. In conversation, his responses are very limited.
-
-Bob answers 'Sure.' if you ask him a question.
-
-He answers 'Whoa, chill out!' if you yell at him.
-
-He answers 'Calm down, I know what I'm doing!' if you yell a question at him.
-
-He says 'Fine. Be that way!' if you address him without actually saying
-anything.
-
-He answers 'Whatever.' to anything else.
-*/
+// Package bob simulates a lackadaisical teenager.
 package bob
 
 import (
@@ -25,7 +12,7 @@ const sure = "Sure."
 const calm = "Calm down, I know what I'm doing!"
 const fine = "Fine. Be that way!"
 
-// Bob's respond method
+// Hey is how you can talk to Bob.
 func Hey(remark string) string {
 	remark = strings.TrimSpace(remark)
 	if isSilent(remark) {
