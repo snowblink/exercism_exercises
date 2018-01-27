@@ -1,15 +1,17 @@
-// This is a "stub" file.  It's a little start on your solution.
-// It's not a complete solution though; you have to write some code.
-
-// Package acronym should have a package comment that summarizes what it's about.
-// https://golang.org/doc/effective_go.html#commentary
+// Package acronym makes acronyms out of strings
 package acronym
 
-// Abbreviate should have a comment documenting it.
+import (
+	"regexp"
+	"strings"
+)
+
+// Abbreviate takes a string and turn it into an acronym.
 func Abbreviate(s string) string {
-	// Write some code here to pass the test suite.
-	// Then remove all the stock comments.
-	// They're here to help you get started but they only clutter a finished solution.
-	// If you leave them in, reviewers may protest!
-	return ""
+	words := regexp.MustCompile("[ -]").Split(s, -1)
+	initials := make([]string, len(words))
+	for i, word := range words {
+		initials[i] = strings.ToUpper(word[0:1])
+	}
+	return strings.Join(initials, "")
 }
