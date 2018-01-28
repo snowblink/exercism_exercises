@@ -1,6 +1,8 @@
 package raindrops
 
-import "strconv"
+import (
+	"strconv"
+)
 
 var factors = map[int]string{
 	3: "Pling",
@@ -17,11 +19,14 @@ var factors = map[int]string{
 //   just pass the number's digits straight through.
 func Convert(n int) string {
 	var result string
-	for factor, say := range factors {
-		if n%factor == 0 {
-			result += say
+	keys := [3]int{3, 5, 7}
+
+	for _, key := range keys {
+		if n%key == 0 {
+			result += factors[key]
 		}
 	}
+
 	if len(result) == 0 {
 		result = strconv.Itoa(n)
 	}
