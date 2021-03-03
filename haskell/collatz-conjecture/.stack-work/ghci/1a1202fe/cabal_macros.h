@@ -22,28 +22,6 @@
   (major1) == 4 && (major2) == 12 && (minor) <= 0)
 #endif /* MIN_VERSION_base */
 
-/* package collatz-conjecture-1.2.1.4 */
-#ifndef VERSION_collatz_conjecture
-#define VERSION_collatz_conjecture "1.2.1.4"
-#endif /* VERSION_collatz_conjecture */
-#ifndef MIN_VERSION_collatz_conjecture
-#define MIN_VERSION_collatz_conjecture(major1,major2,minor) (\
-  (major1) <  1 || \
-  (major1) == 1 && (major2) <  2 || \
-  (major1) == 1 && (major2) == 2 && (minor) <= 1)
-#endif /* MIN_VERSION_collatz_conjecture */
-
-/* package hspec-2.7.1 */
-#ifndef VERSION_hspec
-#define VERSION_hspec "2.7.1"
-#endif /* VERSION_hspec */
-#ifndef MIN_VERSION_hspec
-#define MIN_VERSION_hspec(major1,major2,minor) (\
-  (major1) <  2 || \
-  (major1) == 2 && (major2) <  7 || \
-  (major1) == 2 && (major2) == 7 && (minor) <= 1)
-#endif /* MIN_VERSION_hspec */
-
 /* tool gcc-12.0.0 */
 #ifndef TOOL_VERSION_gcc
 #define TOOL_VERSION_gcc "12.0.0"
@@ -132,9 +110,15 @@
   (major1) == 8 && (major2) == 6 && (minor) <= 5)
 #endif /* MIN_TOOL_VERSION_runghc */
 
+#ifndef CURRENT_PACKAGE_KEY
+#define CURRENT_PACKAGE_KEY "collatz-conjecture-1.2.1.4-41MOigSR330HuHSz6H1Nzf"
+#endif /* CURRENT_PACKAGE_KEY */
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "collatz-conjecture-1.2.1.4-BwJyaB87gMnCWQVMGru6pz-test"
+#define CURRENT_COMPONENT_ID "collatz-conjecture-1.2.1.4-41MOigSR330HuHSz6H1Nzf"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "1.2.1.4"
 #endif /* CURRENT_PACKAGE_VERSION */
+
+#undef CURRENT_PACKAGE_KEY
+#undef CURRENT_COMPONENT_ID

@@ -1,0 +1,12 @@
+? /Users/jonl/programming/exercism_exercises/haskell/collatz-conjecture/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/test/autogen/cabal_macros.h
+: hash: bdc34c1ea80a43cd60b60919c4d4122ea4de9d57d454c45e52b1425056ca042c
+? /Users/jonl/programming/exercism_exercises/haskell/collatz-conjecture/.stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/test/autogen/Paths_collatz_conjecture.hs
+: hash: da5cb9bbb39c02af1158364535366012f2c6df8b722d302f9571a6e3d23e0d8f
+/Users/jonl/programming/exercism_exercises/haskell/collatz-conjecture/test/Tests.hs:
+  hash: 55c06a1f956dc033730864f2a16771b554e2876a6fb0658c99d0d8aa6ac44966
+/Users/jonl/programming/exercism_exercises/haskell/collatz-conjecture/package.yaml:
+  hash: e04e546810251e29e1b3a5bae523e047724b2e3b36899b4d241b93721a71f1a4
+/Users/jonl/programming/exercism_exercises/haskell/collatz-conjecture/collatz-conjecture.cabal:
+  hash: 9c74aa296ce5c1205d3c87890b51baa62ad0bde8481ebde7cd4eeaae7e912571
+/Users/jonl/.stack/programs/x86_64-osx/ghc-8.6.5/lib/ghc-8.6.5/include/ghcversion.h:
+  hash: ca33eca9a5d6d6c3a4138d1ebf5808e19d48d89df6929099f6aaebd64ffe7843
