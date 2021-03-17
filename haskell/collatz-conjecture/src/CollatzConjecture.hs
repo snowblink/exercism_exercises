@@ -1,6 +1,6 @@
 module CollatzConjecture (collatz) where
 
-import Data.Maybe (fromJust, isJust)
+import Data.Maybe (fromJust)
 
 collatz :: Integer -> Maybe Integer
 collatz n
