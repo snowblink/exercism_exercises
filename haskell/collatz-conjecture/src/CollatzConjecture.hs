@@ -1,8 +1,8 @@
 module CollatzConjecture (collatz) where
 
 collatz :: Integer -> Maybe Integer
-collatz n =
-  tailCollatz n 0
+collatz m =
+  tailCollatz m 0
   where tailCollatz n acc
           | n <= 0 = Nothing
           | n == 1 = Just acc
